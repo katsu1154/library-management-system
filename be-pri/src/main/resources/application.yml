@@ -1,0 +1,70 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://ep-empty-heart-ao5kl8zy-pooler.c-2.ap-southeast-1.aws.neon.tech/neondb?sslmode=require
+    username: neondb_owner
+    password: npg_psDMkdLTW7O3
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 5
+      data-source-properties:
+        preparedStatementCacheQueries: 0
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: dai.nguyendinh41510@gmail.com
+    password: YOUR_PASSWORD
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: YOUR_CLIENT_ID
+            client-secret: YOUR_CLIENT_SECRET
+            scope: email, profile
+          office365:
+            provider: office365
+            client-id: YOUR_OFFICE_CLIENT_ID
+            client-secret: YOUR_OFFICE_CLIENT_ID
+            scope: openid, profile, email
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+        provider:
+          office365:
+            issuer-uri: https://login.microsoftonline.com/34b38863-4e8b-488c-9821-b25b3634e04e/v2.0
+
+# JWT Custom Properties
+app:
+  jwtSecret: KLTN_He_Thong_Thu_Vien_Dai_ThangLinh_2026
+  jwtExpirationMs: 86400000
+
+gemini:
+  api:
+    key: AIzaSyDjOp4swnmFHqg_T9Qr2Di33ncIHwrSXZw
+    url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key="
+
+cloudinary:
+  cloud-name: degavv7tz
+  api-key: 519854123758335
+  api-secret: dOmJvc9FOP-gv1uZmN60D0zp-Nw
+
+vnpay:
+  tmnCode: 15U8YZFG
+  hashSecret: ZYIJZO3KWQFQH1WJX1QG82R07H1WESGL
+  paymentUrl: https://sandbox.vnpayment.vn/paymentv2/vpcpay.html
+  returnUrl: http://localhost:8080/api/vnpay/return
+  frontendUrl: http://localhost:3000

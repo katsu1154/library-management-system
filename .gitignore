@@ -1,0 +1,22 @@
+# Bỏ qua thư viện
+node_modules/
+
+# Bỏ qua file môi trường
+.env
+.env.local
+.env.development
+.env.production
+
+# Bỏ qua build folder của Frontend
+.next/
+out/
+build/
+
+# Bỏ qua build folder của Backend
+target/
+*.jar
+*.war
+
+# Bỏ qua file hệ điều hành
+.DS_Store
+Thumbs.db

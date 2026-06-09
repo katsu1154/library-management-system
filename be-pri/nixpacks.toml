@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["jdk17_headless", "maven"]
+
+[phases.build]
+cmds = ["mvn clean package -DskipTests -q"]
+
+[start]
+cmd = "java -jar target/backend-0.0.1-SNAPSHOT.jar"
